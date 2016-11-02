@@ -12,4 +12,5 @@
     <!-- MENU -->
     <string name="menu_completelist">Todas as atrações</string>
     <string name="menu_favorites">Atrações favoritas</string>
+    <string name="title_activity_detail">DetailActivity</string>
 </resources>
