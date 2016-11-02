@@ -4,11 +4,11 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -74,9 +74,7 @@ public class CompleteListFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_complete_list, container, false);
 
-        ArrayList<Attraction> attractions = new ArrayList<>();
-        Attraction floripa = new Attraction("Floripa");
-        attractions.add(floripa);
+        ArrayList<Attraction> attractions = setupAttractions();
 
         ListView listView = (ListView) rootview.findViewById(R.id.listview_complete);
         AttractionAdapter adapter = new AttractionAdapter(attractions);
@@ -122,5 +120,24 @@ public class CompleteListFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public ArrayList<Attraction> setupAttractions() {
+        ArrayList<Attraction> attractions = new ArrayList<>();
+
+        String[] names = getResources().getStringArray(R.array.arr_attraction_name);
+        String[] categories = getResources().getStringArray(R.array.arr_attraction_category);
+        String[] desc = getResources().getStringArray(R.array.arr_attraction_description);
+        String[] photos = getResources().getStringArray(R.array.arr_attraction_picture);
+
+        Attraction attraction;
+
+        for(int i = 0; i < names.length; i++) {
+            attraction = new Attraction(i, names[i], categories[i], desc[i], photos[i]);
+            Log.i("PHOTO", photos[i]);
+            attractions.add(attraction);
+        }
+
+        return attractions;
     }
 }

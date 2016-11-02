@@ -1,11 +1,15 @@
 package me.leofontes.dsotravel.Adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -45,6 +49,15 @@ public class AttractionAdapter extends BaseAdapter {
         if(convertView != null) {
             TextView textViewName = (TextView) convertView.findViewById(R.id.textview_list_name);
             textViewName.setText(attractions.get(position).getName());
+
+            TextView textViewCategory = (TextView) convertView.findViewById(R.id.textview_list_category);
+            textViewCategory.setText(attractions.get(position).getCategory());
+
+            TextView textViewDesc = (TextView) convertView.findViewById(R.id.textview_list_desc);
+            textViewDesc.setText(attractions.get(position).getDescription());
+
+            ImageView imageView = (ImageView) convertView.findViewById(R.id.imageview_list_attraction);
+            Picasso.with(parent.getContext()).load(""+attractions.get(position).getPhoto()).into(imageView);
         }
 
         return convertView;

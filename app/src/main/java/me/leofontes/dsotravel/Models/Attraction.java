@@ -10,19 +10,23 @@ public class Attraction {
     protected String category;
     protected String description;
     protected Schedule schedule;
-    protected String[] photos;
+    protected String photo;
 
-    public Attraction(String name) {
-        this.name = name;
-    }
-
-    public Attraction(int id, String name, String category, String description, Schedule schedule, String[] photos) {
+    public Attraction(int id, String name, String category, String description, Schedule schedule, String photo) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.description = description;
         this.schedule = schedule;
-        this.photos = photos;
+        this.photo = photo;
+    }
+
+    public Attraction(int id, String name, String category, String description, String photo) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.photo = photo;
     }
 
     public int getId() {
@@ -65,11 +69,11 @@ public class Attraction {
         this.schedule = schedule;
     }
 
-    public String[] getPhotos() {
-        return photos;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setPhotos(String[] photos) {
-        this.photos = photos;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }

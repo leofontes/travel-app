@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="arr_attraction_name">
+        <item>Koxixos</item>
+        <item>Ostradamus</item>
+        <item>May</item>
+        <item>Guacamole</item>
+        <item>Meu Escritório</item>
+        <item>Sanduícheria da Ilha</item>
+        <item>Wamaki</item>
+        <item>Didge</item>
+        <item>Bits Pub</item>
+        <item>Toro Steak House</item>
+    </string-array>
+
+    <string-array name="arr_attraction_category">
+        <item>Bar</item>
+        <item>Restaurante</item>
+        <item>Restaurante</item>
+        <item>Restaurante</item>
+        <item>Bar</item>
+        <item>Bar</item>
+        <item>Restaurante</item>
+        <item>Restaurante</item>
+        <item>Bar</item>
+        <item>Restaurante</item>
+    </string-array>
+
+    <string-array name="arr_attraction_description">
+        <item>Há mais de 20 anos, o Koxixos Beer, na Avenida Beira-Mar Norte, recebe para curtir o pôr-do-sol na beira do mar. As mesas no deck de madeira são disputadas por quem quer apreciar a paisagem.</item>
+        <item>O Ostradamus está localizado na Freguesia do Ribeirão, sul da Ilha de Santa Catarina, e com oferecimentos de ostras in natura, gratinadas e conjunto fabuloso de iguarias de frutos do mar.</item>
+        <item>Com uma paisagem encantadora e os pés nas águas de Santo Antônio de Lisboa, o charmoso restaurante May presenteia a Ilha com o que mais amamos na gastronomia tailandesa.</item>
+        <item>Uma mistura de cores e sabores intensos dá o tom ao Guacamole Cocina Mexicana, point pra lá de badalado, com uma atmosfera descontraída e bastante divertida.</item>
+        <item>O Meu Escritório Bar oferece petiscos, lanches, carnes, baguetes, cachorro quente, xis, batata frita e outras porções.</item>
+        <item>Com um cardápio super variado se especializando em sanduíches da conceituada MORTADELA CERATTI, nasce a Sanduicheria da Ilha.</item>
+        <item>Assim como sua primeira casa, a Wamaki inovou mais uma vez, foi a pioneira em trazer o sushi de esteira (kaiten-zushi) para Santa Catarina.</item>
+        <item>O Didge une o melhor da culinária Steakhouse da Austrália com a descontração de um Pub, em um clima super australiano.</item>
+        <item>Bits, o primeiro pub geek de Floripa. Games, séries, drinks e muita cerveja!</item>
+        <item>Casa de carnes nobres na Beira-Mar Norte, com rodízio e a la carte. Instalada em uma casa histórica restaurada, com ares de modernidade.</item>
+    </string-array>
+
+    <string-array name="arr_attraction_picture">
+        <item>https://media-cdn.tripadvisor.com/media/photo-s/08/b5/57/96/vista-de-frente.jpg</item>
+        <item>https://cdn0.casamentos.com.br/emp/fotos/0/8/4/4/t25_rna-8402_13_140844.jpg</item>
+        <item>http://alameda13.com/wp-content/uploads/2015/04/mayfloripa.jpg</item>
+        <item>http://www.guiadasemana.com.br/contentFiles/system/pictures/2012/7/53224/original/clipboard01.jpg</item>
+        <item>http://i.imgur.com/bqFVFHm.jpg</item>
+        <item>http://api.suricates.com.br/system/admin/company_photos/photos/000/000/019/original/sanduicheria-da-ilha_1356031308.jpg?1443466589</item>
+        <item>https://media-cdn.tripadvisor.com/media/photo-s/0a/9c/50/ec/variedade.jpg</item>
+        <item>http://altosagitos.com.br/altosagitos/foto/1730/site/didgefloripa_22_11_2014_113182_1730.jpg</item>
+        <item>http://i.imgur.com/BXzJfSx.jpg</item>
+        <item>http://www.deolhonailha.com.br/fmanager/doni/news/imagem41403_1.jpg?o=1</item>
+    </string-array>
+</resources>
