@@ -52,4 +52,127 @@
         <item>http://i.imgur.com/BXzJfSx.jpg</item>
         <item>http://www.deolhonailha.com.br/fmanager/doni/news/imagem41403_1.jpg?o=1</item>
     </string-array>
+
+    <string-array name="arr_attraction_couvert">
+        <item>false</item>
+        <item>false</item>
+        <item>false</item>
+        <item>true</item>
+        <item>false</item>
+        <item>false</item>
+        <item>false</item>
+        <item>true</item>
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+
+    <string-array name="arr_weekdays">
+        <item>@string/monday</item>
+        <item>@string/tuesday</item>
+        <item>@string/wednesday</item>
+        <item>@string/thursday</item>
+        <item>@string/friday</item>
+        <item>@string/saturday</item>
+        <item>@string/sunday</item>
+    </string-array>
+    
+    <string-array name="arr_koxixos_hours">
+        <item>10:00 as 02:00</item>
+        <item>10:00 as 02:00</item>
+        <item>10:00 as 02:00</item>
+        <item>10:00 as 02:00</item>
+        <item>10:00 as 02:00</item>
+        <item>10:00 as 02:00</item>
+        <item>10:00 as 00:00</item>
+    </string-array>
+
+    <string-array name="arr_ostradamus_hours">
+        <item>Fechado</item>
+        <item>12:00 as 23:00</item>
+        <item>12:00 as 23:00</item>
+        <item>12:00 as 23:00</item>
+        <item>12:00 as 23:00</item>
+        <item>12:00 as 23:00</item>
+        <item>12:00 as 17:00</item>
+    </string-array>
+
+    <string-array name="arr_may_hours">
+        <item>Fechado</item>
+        <item>Fechado</item>
+        <item>19:00 as 00:00</item>
+        <item>19:00 as 00:00</item>
+        <item>19:00 as 00:00</item>
+        <item>12:00 as 00:00</item>
+        <item>12:00 as 16:00</item>
+    </string-array>
+
+    <string-array name="arr_guacamole_hours">
+        <item>19:00 as 01:30</item>
+        <item>19:00 as 01:30</item>
+        <item>19:00 as 01:30</item>
+        <item>19:00 as 01:30</item>
+        <item>19:00 as 02:30</item>
+        <item>19:00 as 02:30</item>
+        <item>19:00 as 01:30</item>
+    </string-array>
+
+    <string-array name="arr_meuescritorio_hours">
+        <item>18:00 as 02:00</item>
+        <item>18:00 as 02:00</item>
+        <item>18:00 as 02:00</item>
+        <item>18:00 as 02:00</item>
+        <item>18:00 as 02:00</item>
+        <item>18:00 as 02:00</item>
+        <item>Fechado</item>
+    </string-array>
+
+    <string-array name="arr_sanduicheria_hours">
+        <item>16:00 as 02:20</item>
+        <item>16:00 as 02:20</item>
+        <item>16:00 as 02:20</item>
+        <item>16:00 as 02:20</item>
+        <item>16:00 as 03:00</item>
+        <item>16:00 as 03:00</item>
+        <item>16:00 as 01:00</item>
+    </string-array>
+
+    <string-array name="arr_wamaki_hours">
+        <item>19:00 as 23:30</item>
+        <item>19:00 as 23:30</item>
+        <item>19:00 as 23:30</item>
+        <item>19:00 as 23:30</item>
+        <item>19:00 as 23:30</item>
+        <item>19:00 as 23:30</item>
+        <item>Fechado</item>
+    </string-array>
+
+    <string-array name="arr_didge_hours">
+        <item>19:00 as 02:30</item>
+        <item>19:00 as 02:30</item>
+        <item>19:00 as 02:30</item>
+        <item>19:00 as 02:30</item>
+        <item>19:00 as 02:30</item>
+        <item>19:00 as 02:30</item>
+        <item>19:00 as 02:30</item>
+    </string-array>
+
+    <string-array name="arr_bits_hours">
+        <item>Fechado</item>
+        <item>Fechado</item>
+        <item>19:00 as 00:00</item>
+        <item>19:00 as 00:00</item>
+        <item>19:00 as 02:00</item>
+        <item>19:00 as 02:00</item>
+        <item>19:00 as 00:00</item>
+    </string-array>
+
+    <string-array name="arr_toro_hours">
+        <item>Fechado</item>
+        <item>18:00 as 23:30</item>
+        <item>18:00 as 23:30</item>
+        <item>18:00 as 23:30</item>
+        <item>18:00 as 23:30</item>
+        <item>12:00 as 23:30</item>
+        <item>12:00 as 18:00</item>
+    </string-array>
 </resources>

@@ -9,16 +9,18 @@ public class Attraction {
     protected String name;
     protected String category;
     protected String description;
-    protected Schedule schedule;
+    protected String[] schedule;
     protected String photo;
+    protected Boolean couvert;
 
-    public Attraction(int id, String name, String category, String description, Schedule schedule, String photo) {
+    public Attraction(int id, String name, String category, String description, String[] schedule, String photo, boolean couvert) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.description = description;
         this.schedule = schedule;
         this.photo = photo;
+        this.couvert = couvert;
     }
 
     public Attraction(int id, String name, String category, String description, String photo) {
@@ -61,11 +63,11 @@ public class Attraction {
         this.description = description;
     }
 
-    public Schedule getSchedule() {
+    public String[] getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(Schedule schedule) {
+    public void setSchedule(String[] schedule) {
         this.schedule = schedule;
     }
 
@@ -75,5 +77,13 @@ public class Attraction {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public Boolean getCouvert() {
+        return couvert;
+    }
+
+    public void setCouvert(Boolean couvert) {
+        this.couvert = couvert;
     }
 }

@@ -13,4 +13,17 @@
     <string name="menu_completelist">Todas as atrações</string>
     <string name="menu_favorites">Atrações favoritas</string>
     <string name="title_activity_detail">DetailActivity</string>
+
+    <!-- DETAIL -->
+    <string name="detail_label_couvert">Cobra Couvert?</string>
+    <string name="detail_couvert_yes">Sim</string>
+    <string name="detail_couvert_no">Não</string>
+    <string name="detail_label_hours">Horário de Atendimento:</string>
+    <string name="monday">Segunda-Feira</string>
+    <string name="tuesday">Terça-Feira</string>
+    <string name="wednesday">Quarta-Feira</string>
+    <string name="thursday">Quinta-Feira</string>
+    <string name="friday">Sexta-Feira</string>
+    <string name="saturday">Sábado</string>
+    <string name="sunday">Domingo</string>
 </resources>

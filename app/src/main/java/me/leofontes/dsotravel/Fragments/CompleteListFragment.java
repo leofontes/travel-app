@@ -129,15 +129,42 @@ public class CompleteListFragment extends Fragment {
         String[] categories = getResources().getStringArray(R.array.arr_attraction_category);
         String[] desc = getResources().getStringArray(R.array.arr_attraction_description);
         String[] photos = getResources().getStringArray(R.array.arr_attraction_picture);
+        String[] couverts = getResources().getStringArray(R.array.arr_attraction_couvert);
 
         Attraction attraction;
 
         for(int i = 0; i < names.length; i++) {
-            attraction = new Attraction(i, names[i], categories[i], desc[i], photos[i]);
-            Log.i("PHOTO", photos[i]);
+            attraction = new Attraction(i, names[i], categories[i], desc[i], getSchedule(i), photos[i], Boolean.parseBoolean(couverts[i]));
             attractions.add(attraction);
         }
 
         return attractions;
+    }
+
+    public String[] getSchedule(int id) {
+        switch(id) {
+            case 1:
+                return getResources().getStringArray(R.array.arr_koxixos_hours);
+            case 2:
+                return getResources().getStringArray(R.array.arr_ostradamus_hours);
+            case 3:
+                return getResources().getStringArray(R.array.arr_may_hours);
+            case 4:
+                return getResources().getStringArray(R.array.arr_guacamole_hours);
+            case 5:
+                return getResources().getStringArray(R.array.arr_meuescritorio_hours);
+            case 6:
+                return getResources().getStringArray(R.array.arr_sanduicheria_hours);
+            case 7:
+                return getResources().getStringArray(R.array.arr_wamaki_hours);
+            case 8:
+                return getResources().getStringArray(R.array.arr_didge_hours);
+            case 9:
+                return getResources().getStringArray(R.array.arr_bits_hours);
+            case 10:
+                return getResources().getStringArray(R.array.arr_toro_hours);
+            default:
+                return null;
+        }
     }
 }
