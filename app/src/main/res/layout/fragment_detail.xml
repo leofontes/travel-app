@@ -20,9 +20,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/defaultLightBlue" />
+            android:textColor="@color/defaultLightBlue"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -37,7 +39,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/textview_detail_category"
             android:textAlignment="center"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:textColor="@color/defaultGreen"
             android:layout_marginTop="5sp"
             android:singleLine="true"
@@ -49,13 +51,16 @@
             android:layout_height="wrap_content"
             android:id="@+id/textview_detail_desc"
             android:textColor="@color/defaultLightBlue"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="5sp">
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="10sp">
 
             <TextView
                 android:text="@string/detail_label_couvert"
@@ -89,7 +94,10 @@
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/seekBar" />
+            android:id="@+id/seekBar"
+            android:max="6"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -114,6 +122,26 @@
                 android:textColor="@color/defaultGreen"
                 android:textAlignment="center" />
         </LinearLayout>
+
+        <Button
+            android:text="@string/detail_button_favorite"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/defaultLightBlue"
+            android:layout_marginTop="20sp"
+            android:textColor="@color/white"
+            android:id="@+id/button_detail_favorite"
+            android:layout_marginBottom="20sp" />
+
+        <Button
+            android:text="@string/detail_button_map"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_detail_map"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/defaultGreen"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 </ScrollView>

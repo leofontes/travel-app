@@ -1,6 +1,7 @@
 package me.leofontes.dsotravel.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,11 +9,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import me.leofontes.dsotravel.Adapters.AttractionAdapter;
+import me.leofontes.dsotravel.DetailActivity;
 import me.leofontes.dsotravel.Models.Attraction;
 import me.leofontes.dsotravel.R;
 
@@ -36,6 +40,7 @@ public class CompleteListFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    public static ArrayList<Attraction> attractions;
 
     public CompleteListFragment() {
         // Required empty public constructor
@@ -74,11 +79,21 @@ public class CompleteListFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_complete_list, container, false);
 
-        ArrayList<Attraction> attractions = setupAttractions();
+        attractions = setupAttractions();
 
         ListView listView = (ListView) rootview.findViewById(R.id.listview_complete);
         AttractionAdapter adapter = new AttractionAdapter(attractions);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), DetailActivity.class);
+                intent.putExtra("origin", "completelist");
+                intent.putExtra("position", "" + position);
+                startActivity(intent);
+            }
+        });
 
         return rootview;
     }
@@ -143,25 +158,25 @@ public class CompleteListFragment extends Fragment {
 
     public String[] getSchedule(int id) {
         switch(id) {
-            case 1:
+            case 0:
                 return getResources().getStringArray(R.array.arr_koxixos_hours);
-            case 2:
+            case 1:
                 return getResources().getStringArray(R.array.arr_ostradamus_hours);
-            case 3:
+            case 2:
                 return getResources().getStringArray(R.array.arr_may_hours);
-            case 4:
+            case 3:
                 return getResources().getStringArray(R.array.arr_guacamole_hours);
-            case 5:
+            case 4:
                 return getResources().getStringArray(R.array.arr_meuescritorio_hours);
-            case 6:
+            case 5:
                 return getResources().getStringArray(R.array.arr_sanduicheria_hours);
-            case 7:
+            case 6:
                 return getResources().getStringArray(R.array.arr_wamaki_hours);
-            case 8:
+            case 7:
                 return getResources().getStringArray(R.array.arr_didge_hours);
-            case 9:
+            case 8:
                 return getResources().getStringArray(R.array.arr_bits_hours);
-            case 10:
+            case 9:
                 return getResources().getStringArray(R.array.arr_toro_hours);
             default:
                 return null;

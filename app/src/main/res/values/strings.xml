@@ -26,4 +26,6 @@
     <string name="friday">Sexta-Feira</string>
     <string name="saturday">Sábado</string>
     <string name="sunday">Domingo</string>
+    <string name="detail_button_favorite">Favoritar</string>
+    <string name="detail_button_map">Ver no mapa</string>
 </resources>
