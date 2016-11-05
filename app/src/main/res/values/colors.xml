@@ -8,6 +8,7 @@
     <color name="defaultGreen">#a6d514</color>
     <color name="defaultLightBlue">#0098fe</color>
     <color name="defaultDarkBlue">#0079d4</color>
+    <color name="defaultRed">#d32f2f</color>
     <color name="white">#FFF</color>
     <color name="black">#000</color>
 </resources>
