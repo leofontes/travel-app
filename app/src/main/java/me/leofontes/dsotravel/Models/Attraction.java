@@ -12,8 +12,11 @@ public class Attraction {
     protected String[] schedule;
     protected String photo;
     protected Boolean couvert;
+    protected String latitude;
+    protected String longitude;
 
-    public Attraction(int id, String name, String category, String description, String[] schedule, String photo, boolean couvert) {
+    public Attraction(int id, String name, String category, String description, String[] schedule, String photo,
+                      Boolean couvert, String latitude, String longitude) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -21,14 +24,8 @@ public class Attraction {
         this.schedule = schedule;
         this.photo = photo;
         this.couvert = couvert;
-    }
-
-    public Attraction(int id, String name, String category, String description, String photo) {
-        this.id = id;
-        this.name = name;
-        this.category = category;
-        this.description = description;
-        this.photo = photo;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public int getId() {
@@ -85,5 +82,21 @@ public class Attraction {
 
     public void setCouvert(Boolean couvert) {
         this.couvert = couvert;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }

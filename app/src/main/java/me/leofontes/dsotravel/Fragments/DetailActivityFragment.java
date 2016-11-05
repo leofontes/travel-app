@@ -1,11 +1,13 @@
 package me.leofontes.dsotravel.Fragments;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -84,6 +86,18 @@ public class DetailActivityFragment extends Fragment {
 
             }
         });
+        // Set up map button
+        Button buttonMap = (Button) rootview.findViewById(R.id.button_detail_map);
+        buttonMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri gmmIntentUri = Uri.parse("geo:" + attraction.getLatitude() + "," + attraction.getLongitude() + "?q=" + attraction.getName());
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
+
 
         return rootview;
     }

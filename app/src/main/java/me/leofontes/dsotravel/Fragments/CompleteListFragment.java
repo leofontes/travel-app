@@ -145,11 +145,13 @@ public class CompleteListFragment extends Fragment {
         String[] desc = getResources().getStringArray(R.array.arr_attraction_description);
         String[] photos = getResources().getStringArray(R.array.arr_attraction_picture);
         String[] couverts = getResources().getStringArray(R.array.arr_attraction_couvert);
+        String[] latitudes = getResources().getStringArray(R.array.arr_latitudes);
+        String[] longitudes = getResources().getStringArray(R.array.arr_longitudes);
 
         Attraction attraction;
 
         for(int i = 0; i < names.length; i++) {
-            attraction = new Attraction(i, names[i], categories[i], desc[i], getSchedule(i), photos[i], Boolean.parseBoolean(couverts[i]));
+            attraction = new Attraction(i, names[i], categories[i], desc[i], getSchedule(i), photos[i], Boolean.parseBoolean(couverts[i]), latitudes[i], longitudes[i]);
             attractions.add(attraction);
         }
 

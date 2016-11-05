@@ -75,7 +75,33 @@
         <item>@string/saturday</item>
         <item>@string/sunday</item>
     </string-array>
-    
+
+    <string-array name="arr_latitudes">
+        <item>-27.5732272</item>
+        <item>-27.7200171</item>
+        <item>-27.5149407</item>
+        <item>-27.5863945</item>
+        <item>-27.6018556</item>
+        <item>-27.5846656</item>
+        <item>-27.5909721</item>
+        <item>-27.586473</item>
+        <item>-27.587116</item>
+        <item>-27.5884062</item>
+    </string-array>
+
+    <string-array name="arr_longitudes">
+        <item>-48.5418355</item>
+        <item>-48.5663881</item>
+        <item>-48.5173014</item>
+        <item>-48.5529446</item>
+        <item>-48.5192842</item>
+        <item>-48.5485357</item>
+        <item>-48.5160767</item>
+        <item>-48.5531692</item>
+        <item>-48.5263181</item>
+        <item>-48.5593798</item>
+    </string-array>
+
     <string-array name="arr_koxixos_hours">
         <item>10:00 as 02:00</item>
         <item>10:00 as 02:00</item>
