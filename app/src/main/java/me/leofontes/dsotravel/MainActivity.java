@@ -13,12 +13,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import me.leofontes.dsotravel.Fragments.CompleteListFragment;
+import me.leofontes.dsotravel.Fragments.ListFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, CompleteListFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, ListFragment.OnFragmentInteractionListener {
     Fragment fragment;
     FragmentManager fragmentManager;
+    public static final String LIST_KEY = "list";
+    public static final String COMPLETE_LIST = "complete";
+    public static final String FAVORITE_LIST = "favorite";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +40,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        fragment = new CompleteListFragment();
-        fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit();
+        setupLaunchFragment(COMPLETE_LIST);
     }
 
     @Override
@@ -80,9 +82,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_all) {
-            // Handle the camera action
+            setupLaunchFragment(COMPLETE_LIST);
         } else if (id == R.id.nav_favorites) {
-
+            setupLaunchFragment(FAVORITE_LIST);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -93,5 +95,18 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    public void setupLaunchFragment(String list) {
+        fragment = new ListFragment();
+        fragmentManager = getSupportFragmentManager();
+        Bundle bundle = new Bundle();
+        if(list.equals(COMPLETE_LIST)) {
+            bundle.putString(LIST_KEY, COMPLETE_LIST);
+        } else if(list.equals(FAVORITE_LIST)) {
+            bundle.putString(LIST_KEY, FAVORITE_LIST);
+        }
+        fragment.setArguments(bundle);
+        fragmentManager.beginTransaction().replace(R.id.content_main, fragment).commit();
     }
 }

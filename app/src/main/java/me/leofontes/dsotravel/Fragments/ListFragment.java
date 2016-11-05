@@ -2,8 +2,10 @@ package me.leofontes.dsotravel.Fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,12 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import me.leofontes.dsotravel.Adapters.AttractionAdapter;
 import me.leofontes.dsotravel.DetailActivity;
+import me.leofontes.dsotravel.MainActivity;
 import me.leofontes.dsotravel.Models.Attraction;
 import me.leofontes.dsotravel.R;
 
@@ -24,25 +26,28 @@ import me.leofontes.dsotravel.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link CompleteListFragment.OnFragmentInteractionListener} interface
+ * {@link ListFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link CompleteListFragment#newInstance} factory method to
+ * Use the {@link ListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CompleteListFragment extends Fragment {
+public class ListFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+    // TODO: Rename and change types of parameter
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
     public static ArrayList<Attraction> attractions;
+    protected String listType;
+    protected SharedPreferences myPrefs;
+    protected SharedPreferences.Editor peditor;
 
-    public CompleteListFragment() {
+    public ListFragment() {
         // Required empty public constructor
     }
 
@@ -52,11 +57,11 @@ public class CompleteListFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CompleteListFragment.
+     * @return A new instance of fragment ListFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CompleteListFragment newInstance(String param1, String param2) {
-        CompleteListFragment fragment = new CompleteListFragment();
+    public static ListFragment newInstance(String param1, String param2) {
+        ListFragment fragment = new ListFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -71,15 +76,18 @@ public class CompleteListFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        listType = getArguments().getString(MainActivity.LIST_KEY);
+        myPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+        peditor = myPrefs.edit();
+        attractions = setupAttractions();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootview = inflater.inflate(R.layout.fragment_complete_list, container, false);
-
-        attractions = setupAttractions();
+        View rootview = inflater.inflate(R.layout.fragment_list, container, false);
 
         ListView listView = (ListView) rootview.findViewById(R.id.listview_complete);
         AttractionAdapter adapter = new AttractionAdapter(attractions);
@@ -150,12 +158,48 @@ public class CompleteListFragment extends Fragment {
 
         Attraction attraction;
 
-        for(int i = 0; i < names.length; i++) {
-            attraction = new Attraction(i, names[i], categories[i], desc[i], getSchedule(i), photos[i], Boolean.parseBoolean(couverts[i]), latitudes[i], longitudes[i]);
-            attractions.add(attraction);
+        if(listType.equals(MainActivity.COMPLETE_LIST)) {
+            for(int i = 0; i < names.length; i++) {
+                attraction = new Attraction(i, names[i], categories[i], desc[i], getSchedule(i), photos[i], Boolean.parseBoolean(couverts[i]), latitudes[i], longitudes[i]);
+                attractions.add(attraction);
+            }
+        } else {
+            for(int i = 0; i < names.length; i++) {
+                if(checkFavorites(i)) {
+                    attraction = new Attraction(i, names[i], categories[i], desc[i], getSchedule(i), photos[i], Boolean.parseBoolean(couverts[i]), latitudes[i], longitudes[i]);
+                    attractions.add(attraction);
+                }
+            }
         }
 
         return attractions;
+    }
+
+    public boolean checkFavorites(int i) {
+        switch(i) {
+            case 0:
+                return myPrefs.getString(getString(R.string.fav_koxixos), "false").equals("true");
+            case 1:
+                return myPrefs.getString(getString(R.string.fav_ostradamus), "false").equals("true");
+            case 2:
+                return myPrefs.getString(getString(R.string.fav_may), "false").equals("true");
+            case 3:
+                return myPrefs.getString(getString(R.string.fav_guacamole), "false").equals("true");
+            case 4:
+                return myPrefs.getString(getString(R.string.fav_me), "false").equals("true");
+            case 5:
+                return myPrefs.getString(getString(R.string.fav_sanduicheria), "false").equals("true");
+            case 6:
+                return myPrefs.getString(getString(R.string.fav_wamaki), "false").equals("true");
+            case 7:
+                return myPrefs.getString(getString(R.string.fav_didge), "false").equals("true");
+            case 8:
+                return myPrefs.getString(getString(R.string.fav_bits), "false").equals("true");
+            case 9:
+                return myPrefs.getString(getString(R.string.fav_toro), "false").equals("true");
+            default:
+                return true;
+        }
     }
 
     public String[] getSchedule(int id) {

@@ -1,6 +1,7 @@
 package me.leofontes.dsotravel.Fragments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -22,7 +22,9 @@ import me.leofontes.dsotravel.R;
  * A placeholder fragment containing a simple view.
  */
 public class DetailActivityFragment extends Fragment {
-    Attraction attraction;
+    protected Attraction attraction;
+    protected SharedPreferences myPrefs;
+    protected SharedPreferences.Editor peditor;
 
     public DetailActivityFragment() {
     }
@@ -37,7 +39,7 @@ public class DetailActivityFragment extends Fragment {
             int position;
             if(intent.getStringExtra("origin").equals("completelist")) {
                 position = Integer.parseInt(intent.getStringExtra("position"));
-                attraction = CompleteListFragment.attractions.get(position);
+                attraction = ListFragment.attractions.get(position);
             } else if(intent.getStringExtra("origin").equals("favoritelist")) {
 
             }
@@ -98,7 +100,8 @@ public class DetailActivityFragment extends Fragment {
             }
         });
 
-
         return rootview;
     }
+
+    
 }

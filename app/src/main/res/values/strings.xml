@@ -28,4 +28,16 @@
     <string name="sunday">Domingo</string>
     <string name="detail_button_favorite">Favoritar</string>
     <string name="detail_button_map">Ver no mapa</string>
+
+    <!-- FAVORITE KEY -->
+    <string name="fav_koxixos">FAVKOXIXOS</string>
+    <string name="fav_ostradamus">FAVOSTRADAMUS</string>
+    <string name="fav_may">FAVMAY</string>
+    <string name="fav_guacamole">FAVGUACAMOLE</string>
+    <string name="fav_me">FAVME</string>
+    <string name="fav_sanduicheria">FAVSANDUICHERIA</string>
+    <string name="fav_wamaki">FAVWAMAKI</string>
+    <string name="fav_didge">FAVDIDGE</string>
+    <string name="fav_bits">FAVBITS</string>
+    <string name="fav_toro">FAVTORO</string>
 </resources>
