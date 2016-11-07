@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-import me.leofontes.dsotravel.MainActivity;
 import me.leofontes.dsotravel.Models.Attraction;
 import me.leofontes.dsotravel.R;
 
